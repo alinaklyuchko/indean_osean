@@ -25,7 +25,6 @@ body
   font-family 'Lato', sans-serif
 
 .io-container
-  // height 100vh
   min-height 768px
   display flex
   flex-direction: column
@@ -34,27 +33,22 @@ body
     height 100%
   @media screen and (max-width: 1400px)
     width 100%
+    max-height unset
   
 .io-container__main
-  height 930px
+  height calc(100vh - 150px)
   background #9bcbee url('img/indian_ocean_bg.jpg') no-repeat
   @media screen and (max-width: 1680px)
     background-position right
     background-size cover
-  @media screen and (max-width: 1400px)
-    background #9bcbee url('img/indian_ocean_bg2.jpg') no-repeat
-    height 760px
   @media screen and (max-width: 1024px)
     background-position right 
     background-size cover
-    height 100vh
   @media screen and (max-width: 768px)
-    height 1200px
     background-position left
   @media screen and (max-width: 600px) 
-    background-position left
-    height 1200px
-
+    height 1000px
+  
 .io-container__main-logo
   top 28px
   left 113px
@@ -66,40 +60,32 @@ body
     left 50%
     transform translateX(-50%)
   @media screen and (max-width: 600px) 
-    width 200px
+    width 180px
+  @media screen and (max-width: 400px)
+    width 150px
 
 .io-container__main-wrapper
   display flex
   justify-content space-between
   padding 19px 19px 15px 12px
   position absolute
-  top 234 px
+  top 50%
+  transform translateY(-50%)
   left 100px
-  width 1216px
   min-height max-content
-  @media screen and (max-width: 1680px)
-    width 67%
-    height 90%
-    top 180px
-  @media screen and (max-width: 1560px)
-    width 65%
-    height 67%
-    top 160px
-  @media screen and (max-width: 1024px)
-    width 80%
-  @media (max-width: 992px)
-    left 60px
-    width 85%
   @media screen and (max-width: 768px)
     flex-direction column
     justify-content center
     align-items center
-    margin-top 200px
+    margin-top 100px
+    left 20%
   @media screen and (max-width: 600px) 
-    left 35px
+    margin-top 400px
+    left 0
   @media screen and (max-width: 400px)
-    top 200px
-   
+    margin-top 280px
+    left 55px
+    width 70%
 
 .io-container__main-wrapper-txt
   color white
@@ -111,23 +97,27 @@ body
   flex-direction column
   max-width 680px
   min-width 544px
+  margin-right 81px
   @media screen and (max-width: 1680px)
     font-size 30px
   @media screen and (max-width: 1560px)
     font-size 26px
   @media screen and (max-width: 1400px)
     font-size 24px
+  @media screen and (max-width: 1024px)
+    min-width 450px
+    margin-right 15px
   @media screen and (max-width: 992px)
     font-size 19px
     margin-bottom 70px
-   
+  @media screen and (max-width: 400px)
+    font-size 14px
 
 .io-container__main-wrapper-txt-h1
   font-weight 700
   margin-bottom 71px
   margin-top 36px
-  @media screen and (max-width: 1400px)
-    margin-top 44px
+  position relative
   
   &:before
     content ''
@@ -135,18 +125,24 @@ body
     width 57px
     height 30px
     background-image url('img/back.png')
-    top 118px
-    left 25%
-  @media screen and (max-width: 1366px)
-    left 30%
-    top 115px
-  @media screen and (max-width: 768px)
-    top 5px
-    left 45%
+    top 68px
+    left 263px
+    @media screen and (max-width: 1680px)
+      top 63px
+      left 230px
+     @media screen and (max-width: 1536px)
+      top 57px
+      left 200px
+    @media screen and (max-width: 1366px)
+      top 50px
+      left 177px
+    @media screen and (max-width: 768px)
+      left 135px
 
 .io-container__main-wrapper-txt-h2
   font-weight normal
   margin-bottom 76px
+  position relative
 
   &:before
     content ''
@@ -154,14 +150,20 @@ body
     width 57px
     height 30px
     background-image url('img/back.png')
-    top 238px
-    left 25%
-  @media screen and (max-width: 1366px)
-    left 30%
-    top 220px
-  @media screen and (max-width: 768px)
-    top 100px
-    left 45%
+    top 75px
+    left 190px
+    @media screen and (max-width: 1680px)
+      top 65px
+      left 166px
+    @media screen and (max-width: 1536px)
+      top 60px
+      left 145px
+    @media screen and (max-width: 1366px)
+      top 56px
+      left 125px
+    @media screen and (max-width: 768px)
+      top 50px
+      left 94px
   
 .io-container__main-wrapper-txt-h3
   font-weight normal
@@ -171,8 +173,6 @@ body
   font-weight 700
 
 .io-container__main-wrapper-box
-  // width 450px
-  // height 495px
   background rgba(108, 169, 227, 0.9)
   box-shadow 0 0 40px #0404043b
   padding 38px 45px
@@ -258,10 +258,12 @@ input::-webkit-input-placeholder
   height 150px
   background #81a7cc
   display block
+  @media screen and (max-width: 600px)
+    height max-content
+    height -moz-max-content
 
 .io-container__footer-wrapper
   display flex 
-  // flex-direction column
   align-items center
   justify-content center
 
